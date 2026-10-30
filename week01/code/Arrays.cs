@@ -13,7 +13,16 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
+        double[] result = new double[length];
+
+        // Iterates from 'number' at multiples of 'length'
+        for (int i = 0; i < length; i++)
+        {
+            // Returns result of number list
+            result[i] = number * (i + 1);
+        }
+
+        return result; // replace this return statement with your own
     }
 
     /// <summary>
@@ -29,5 +38,22 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+        // Checks if 'data' is equal to 0 and returns the result
+        if (data.Count == 0) return;
+
+        // Sets 'amount' remainder with 'data.Count'
+        amount = amount % data.Count;
+
+        // Iterates from 0 until it's rotated by 'amount'
+        for (int i = 0; i < amount; i++)
+        {
+            int last = data[data.Count - 1];
+
+            // Removes the data from the intended position - 1
+            data.RemoveAt(data.Count - 1);
+            // Inserts the rest from the last position
+            data.Insert(0, last);
+        }
     }
 }
